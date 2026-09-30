@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impulsionar | Faça Parte</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/formularios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="module" src="../js/script.js"></script>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1>
+      <img src="../imagens/logo_projeto_impulsionar.png" alt="Impulsionar">
+    </h1>
+    <p class="subtitulo">Faça parte dessa transformação.</p>
+  </header>
+
+  <nav class="menu" aria-label="Menu principal">
+    <button type="button" class="menu-hamburguer" aria-label="Menu" aria-controls="menu-principal" aria-expanded="false">☰</button>
+
+    <ul class="nav-links" id="menu-principal">
+      <li><a href="index.html" data-rota="index.html">Início</a></li>
+      <li class="menu-dropdown">
+        <a href="projetos.html" data-rota="projetos.html">Projetos</a>
+        <ul class="submenu">
+          <li><a href="projetos.html#inclusao">Inclusão Digital</a></li>
+          <li><a href="projetos.html#empregabilidade">Empregabilidade</a></li>
+          <li><a href="projetos.html#oportunidades">Oportunidades</a></li>
+        </ul>
+      </li>
+      <li><a href="capacitacao.html" data-rota="capacitacao.html">Capacitação</a></li>
+      <li><a href="cadastro.html" data-rota="cadastro.html">Faça parte</a></li>
+    </ul>
+  </nav>
+
+  <main id="conteudo-principal">
+
+    <section class="introducao">
+      <h2>Faça parte do Impulsionar</h2>
+      <span class="badge">Participe</span>
+      <p>
+        Você pode contribuir com a iniciativa como voluntário,
+        parceiro ou apoiador.
+      </p>
+    </section>
+
+    <section class="formulario">
+      <form>
+
+        <fieldset>
+          <legend>Dados pessoais</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            autocomplete="name"
+            required
+          >
+        </fieldset>
+
+        <fieldset>
+          <legend>Dados de contato</legend>
+
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="exemplo@email.com"
+            autocomplete="email"
+            required
+          >
+
+          <label for="telefone">Telefone:</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="(38) 99999-9999"
+            autocomplete="tel"
+            inputmode="numeric"
+            required
+            pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+            title="Use o formato (38) 99999-9999"
+          >
+
+          <label for="cep">CEP:</label>
+          <input
+            type="text"
+            id="cep"
+            name="cep"
+            placeholder="00000-000"
+            autocomplete="postal-code"
+            inputmode="numeric"
+            required
+            pattern="[0-9]{5}-[0-9]{3}"
+            title="Use o formato 00000-000"
+          >
+        </fieldset>
+
+        <fieldset>
+          <legend>Forma de contribuição</legend>
+
+          <label for="tipo">Como deseja contribuir?</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecione uma opção</option>
+            <option value="voluntario">Quero ser voluntário</option>
+            <option value="doador">Quero ser apoiador/doador</option>
+            <option value="parceiro">Quero ser parceiro</option>
+          </select>
+
+          <label for="mensagem">Conte um pouco sobre como deseja contribuir:</label>
+          <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+        </fieldset>
+
+        <button type="button" id="botaoEnviar">Enviar cadastro</button>
+
+      </form>
+    </section>
+
+    <!-- Alerta e modal ficam DENTRO do main para serem carregados pela SPA -->
+    <div id="alertaSucesso" class="alerta sucesso" role="alert">
+      <strong>Cadastro realizado com sucesso!</strong>
+      <p>Obrigado por fazer parte do Impulsionar.</p>
+    </div>
+
+    <div
+      id="modalConfirmacao"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tituloModal"
+    >
+      <div class="modal-conteudo">
+        <h2 id="tituloModal">Confirmar cadastro?</h2>
+        <p>Deseja realmente enviar seus dados para participar do Impulsionar?</p>
+
+        <div class="modal-acoes">
+          <button type="button" id="botaoCancelar" class="botao-secundario">Cancelar</button>
+          <button type="button" id="botaoConfirmar">Confirmar</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Impulsionar © 2026</p>
+    <p>
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      <a href="tel:+5511999999999">(11) 99999-9999</a>
+    </p>
+    <p>
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <a href="mailto:contato@impulsionar.org">contato@impulsionar.org</a>
+    </p>
+  </footer>
+
+</body>
+</html>

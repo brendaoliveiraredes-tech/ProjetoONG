@@ -1,0 +1,146 @@
+/* =========================================================
+   FORMULÁRIOS
+   Depende das variáveis definidas em style.css
+   (por isso style.css deve ser carregado antes).
+========================================================= */
+
+.formulario {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--cor-fundo);
+  border-radius: 10px;
+}
+
+/* Grupos do formulário */
+.formulario fieldset {
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.formulario legend {
+  color: var(--cor-preta);
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--tamanho-corpo);
+  font-weight: bold;
+  color: var(--cor-texto);
+}
+
+/* Campos */
+.formulario input,
+.formulario select,
+.formulario textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
+  font-family: var(--fonte-principal);
+  font-size: var(--tamanho-corpo);
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: 2px solid var(--cor-preta);
+  border-color: var(--cor-preta);
+}
+
+/* Botão de envio
+   (cores, borda, fonte e hover vêm do botão geral em style.css) */
+.formulario button {
+  width: 100%;
+  padding: 14px;
+}
+
+/* =========================================================
+   ALERTA DE SUCESSO
+========================================================= */
+.alerta {
+  display: none;
+  max-width: 700px;
+  margin: var(--espaco-4) auto;
+  padding: 16px 20px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.alerta.ativo {
+  display: block;
+}
+
+.alerta.sucesso {
+  background-color: var(--cor-fundo);
+  border-color: var(--cor-verde);
+  color: var(--cor-verde-escura);
+}
+
+.alerta.sucesso p {
+  margin: 5px 0 0;
+}
+
+/* =========================================================
+   MODAL DE CONFIRMAÇÃO
+========================================================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+}
+
+.modal.ativo {
+  display: flex;
+}
+
+.modal-conteudo {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: var(--cor-branca);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal-acoes button {
+  padding: var(--espaco-3) var(--espaco-4);
+}
+
+/* Botão secundário (Cancelar) */
+.botao-secundario {
+  background-color: var(--cor-fundo);
+  color: var(--cor-preta);
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario:hover {
+  background-color: var(--cor-borda);
+  color: var(--cor-preta);
+}
