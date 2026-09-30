@@ -1,10 +1,6 @@
 # Impulsionar
 
- 
-
-Projeto acadêmico de uma iniciativa social voltada à **inclusão digital, capacitação e empregabilidade**. O site apresenta a iniciativa, seus projetos, cursos de capacitação e um formulário para quem deseja participar como voluntário, doador ou parceiro.
-
- 
+O projeto Impulsionar, é um projeto acadêmico de uma iniciativa social voltada à **inclusão digital, capacitação e empregabilidade**. O site apresenta a iniciativa, seus projetos, cursos de capacitação e um formulário para quem deseja participar como voluntário, doador ou parceiro.
 
 Autora: Brenda Oliveira Santos
 
@@ -12,14 +8,9 @@ Curso/Disciplina: Análise e Desenvolvimento de Sistemas – Desenvolvimento de 
 
 Instituição: Universidade Cruzeiro do Sul/ Unifran
  
-
 ---
 
- 
-
 ## 1. Funcionalidades
-
- 
 
 - Páginas: Início, Projetos, Capacitação e Faça parte (cadastro).
 
@@ -39,19 +30,11 @@ Instituição: Universidade Cruzeiro do Sul/ Unifran
 
 - Layout responsivo e cuidados de acessibilidade.
 
-
-
 ## 2. Tecnologias
-
- 
 
 HTML5, CSS3 e JavaScript (ES6 Modules). Ícones do rodapé: Font Awesome, carregado por CDN (precisa de internet).
 
- 
-
 ## 3. Estrutura de pastas
-
- 
 
 ```
 
@@ -101,11 +84,7 @@ ProjetoONG/
 
 ```
 
- 
-
 ### Separation of Concerns
-
- 
 
 | Tecnologia | Responsabilidade |
 
@@ -119,19 +98,11 @@ ProjetoONG/
 
 | Imagens | Recursos visuais |
 
- 
-
 Cada pasta reúne um único tipo de recurso, e cada tecnologia cuida só da sua responsabilidade.
-
- 
 
 ## 4. Como executar
 
- 
-
 O projeto usa `fetch()` (SPA) e módulos ES6, que **não funcionam abrindo o arquivo direto do computador** (`file://`). É preciso um servidor local:
-
- 
 
 1. Abra a pasta do projeto no VS Code.
 
@@ -139,11 +110,7 @@ O projeto usa `fetch()` (SPA) e módulos ES6, que **não funcionam abrindo o arq
 
 3. Clique com o botão direito em `html/index.html` e escolha **Open with Live Server**.
 
-
-
 ## 5. HTML e semântica
-
- 
 
 - Estrutura com `header`, `nav`, `main`, `section`, `article` e `footer`.
 
@@ -157,11 +124,7 @@ O projeto usa `fetch()` (SPA) e módulos ES6, que **não funcionam abrindo o arq
 
 - Formulário com `fieldset`, `legend`, `label` associado a cada campo (`for`/`id`), `required`, tipos adequados (`email`, `tel`), `pattern`, `inputmode` e `autocomplete`.
 
-
-
 ## 6. CSS
-
- 
 
 - **`style.css`:** variáveis, corpo, cabeçalho, menu, conteúdo, tipografia, cards, botões gerais, badge, rodapé e responsividade.
 
@@ -171,15 +134,9 @@ O projeto usa `fetch()` (SPA) e módulos ES6, que **não funcionam abrindo o arq
 
 - **Responsividade:** grid de 12 colunas com 4 breakpoints (1200px, 1000px, 700px e 500px). Os cards passam de 3 por linha para 2 e depois para 1; no celular o menu vira hambúrguer.
 
-
-
 ## 7. JavaScript modular
 
- 
-
 O JavaScript foi dividido em módulos ES6 (`import`/`export`), cada um com uma responsabilidade:
-
- 
 
 | Arquivo | Responsabilidade |
 
@@ -197,11 +154,7 @@ O JavaScript foi dividido em módulos ES6 (`import`/`export`), cada um com uma r
 
 | `storage.js` | Leitura e gravação no `localStorage` |
 
- 
-
 **Comunicação entre os módulos:**
-
- 
 
 ```
 
@@ -215,23 +168,15 @@ script.js ──► menu.js
 
 ```
 
- 
-
 - O `spa.js` não conhece cursos nem formulário: recebe uma função (*callback*) que é chamada quando um novo conteúdo entra no DOM. Quem decide o que reinicializar é o `script.js`.
 
 - O `storage.js` não acessa o DOM; recebe e devolve apenas objetos.
 
 - Não há dependências circulares.
 
-
-
 ## 8. SPA e manipulação do DOM
 
- 
-
 Os links principais possuem `data-rota`, por exemplo:
-
- 
 
 ```html
 
@@ -239,11 +184,7 @@ Os links principais possuem `data-rota`, por exemplo:
 
 ```
 
- 
-
 Fluxo da navegação:
-
- 
 
 ```
 
@@ -279,27 +220,15 @@ novo conteúdo aparece no DOM
 
 ```
 
- 
-
 Também são atualizados o título da aba (`document.title`), o subtítulo do cabeçalho, a URL (`history.pushState()`) e a rolagem (`window.scrollTo`). O evento `popstate` faz o botão Voltar/Avançar do navegador funcionar, e o foco é movido para o novo conteúdo para leitores de tela.
-
- 
 
 **Manipulação do DOM:** o JavaScript captura a intenção de navegação, impede o comportamento padrão, busca o HTML correspondente, o transforma em um documento, localiza o elemento principal e substitui somente o seu conteúdo. Cabeçalho, menu e rodapé permanecem no DOM, sem reconstruir o documento inteiro a cada interação.
 
- 
-
 **Limitação:** os links do submenu de Projetos (`projetos.html#inclusao` etc.) usam navegação tradicional, com recarregamento da página.
-
- 
 
 ## 9. Sistema de templates
 
- 
-
 Implementado em `cursos.js` e usado na página de Capacitação. O HTML contém apenas o contêiner:
-
- 
 
 ```html
 
@@ -307,11 +236,7 @@ Implementado em `cursos.js` e usado na página de Capacitação. O HTML contém 
 
 ```
 
- 
-
 Os dados ficam em um array de objetos e o card é gerado por uma função de template:
-
- 
 
 ```js
 
@@ -367,19 +292,11 @@ cards visíveis no DOM
 
 ```
 
- 
-
 Como a página é carregada pela SPA, `renderizarCursos()` é chamada depois que o conteúdo é inserido no DOM.
-
- 
 
 ## 10. Formulário
 
- 
-
 A página de cadastro possui:
-
- 
 
 - **Dados pessoais:** nome.
 
@@ -387,35 +304,19 @@ A página de cadastro possui:
 
 - **Forma de contribuição:** voluntário, doador ou parceiro, e mensagem.
 
-
-
 **Validação:** atributos HTML (`required`, `type="email"`, `pattern`) e, no JavaScript, `formulario.checkValidity()` e `formulario.reportValidity()`.
-
- 
 
 **Máscaras:** telefone `(38) 99999-9999` e CEP `00000-000`, aplicadas no evento `input`.
 
- 
-
 **Modal de confirmação:** ao clicar em "Enviar cadastro", se o formulário for válido, aparece o modal "Confirmar cadastro?" com os botões Cancelar e Confirmar. O modal é aberto com `classList.add("ativo")` e fechado com `classList.remove("ativo")`. Também fecha com a tecla Esc.
-
- 
 
 **Alerta de sucesso:** após confirmar, aparece "Cadastro realizado com sucesso!". O alerta e o modal ficam dentro de `#conteudo-principal` para serem carregados junto com a página pela SPA.
 
- 
-
 Como o formulário também é carregado dinamicamente, ele é inicializado pela função `inicializarFormulario()`, chamada a cada troca de página.
-
- 
 
 ## 11. localStorage
 
- 
-
 Ao confirmar o cadastro, os dados são lidos com `FormData`, convertidos em objeto, transformados em JSON e gravados no navegador:
-
- 
 
 ```js
 
@@ -425,19 +326,11 @@ localStorage.setItem("cadastroImpulsionar", JSON.stringify(dadosCadastro));
 
 ```
 
- 
-
 Para recuperar, o texto é convertido de volta com `JSON.parse()`. Ao abrir o formulário, os campos são preenchidos com os dados salvos, se existirem.
-
- 
 
 **Como verificar:** envie o formulário e abra as ferramentas do navegador (F12) → **Application** → **Local Storage** → chave `cadastroImpulsionar`.
 
- 
-
 **Observações:**
-
- 
 
 - O `localStorage` guarda os dados no navegador do usuário, em formato de texto, por isso a conversão para JSON.
 
@@ -445,11 +338,7 @@ Para recuperar, o texto é convertido de volta com `JSON.parse()`. Ao abrir o fo
 
 - Há uma única chave: cada novo cadastro sobrescreve o anterior.
 
-
-
 ## 12. Acessibilidade
-
- 
 
 - `alt` na imagem do logo e ícones decorativos com `aria-hidden="true"`.
 
@@ -467,15 +356,9 @@ Para recuperar, o texto é convertido de volta com `JSON.parse()`. Ao abrir o fo
 
 - Cores de hover no fundo preto com contraste adequado.
 
-
-
 ## 13. Versionamento (GitFlow)
 
- 
-
 O repositório segue o modelo GitFlow, mesmo em desenvolvimento individual:
-
- 
 
 | Branch | Uso |
 
@@ -491,15 +374,9 @@ O repositório segue o modelo GitFlow, mesmo em desenvolvimento individual:
 
 | `hotfix/*` | Correções urgentes partindo da `main` (prevista no fluxo, usada apenas quando necessária) |
 
- 
-
 O GitFlow foi adotado a partir da etapa atual do projeto. Os merges usam `--no-ff` para manter o histórico das branches visível.
 
- 
-
 ## 14. Limitações conhecidas
-
- 
 
 - Exige servidor local (Live Server) para funcionar.
 
