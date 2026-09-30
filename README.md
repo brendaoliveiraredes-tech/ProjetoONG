@@ -1,11 +1,8 @@
 # Impulsionar
 
- 
-
-Projeto acadêmico de uma iniciativa social voltada à **inclusão digital, capacitação e empregabilidade**. O site apresenta a iniciativa, seus projetos, cursos de capacitação e um formulário para quem deseja participar como voluntário, doador ou parceiro.
+O projeto Impulsionar, é um projeto acadêmico de uma iniciativa social voltada à **inclusão digital, capacitação e empregabilidade**. O site apresenta a iniciativa, seus projetos, cursos de capacitação e um formulário para quem deseja participar como voluntário, doador ou parceiro.
 
  
-
 Autora: Brenda Oliveira Santos
 
 Curso/Disciplina: Análise e Desenvolvimento de Sistemas – Desenvolvimento de front-end para Web
