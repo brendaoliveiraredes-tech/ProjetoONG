@@ -1,0 +1,2 @@
+Projeto Impulsionar
+O Impulsionar é uma iniciativa social voltada à inclusão digital e à empregabilidade. Nosso objetivo é oferecer conhecimento e ferramentas para que pessoas com pouca familiaridade tecnológica possam desenvolver autonomia digital e ampliar suas oportunidades de estudo e trabalho.
