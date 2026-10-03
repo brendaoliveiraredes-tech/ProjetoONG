@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impulsionar | Capacitação</title>
+  <title>Impulsionar | Entrar</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/formularios.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -15,7 +15,7 @@
     <h1>
       <img src="../imagens/logo_projeto_impulsionar.png" alt="Impulsionar">
     </h1>
-    <p class="subtitulo">Aprenda no seu ritmo.</p>
+    <p class="subtitulo">Acesse a sua conta.</p>
   </header>
 
   <nav class="menu" aria-label="Menu principal">
@@ -41,15 +41,42 @@
   <main id="conteudo-principal">
 
     <section class="introducao">
-      <h2>Centro de Capacitação Digital</h2>
-      <p>
-        Encontre conteúdos gratuitos e práticos para desenvolver
-        suas habilidades digitais e profissionais.
-      </p>
+      <h2>Entrar</h2>
+      <p>Acesse a sua conta para usar os recursos do Impulsionar.</p>
     </section>
 
-    <!-- Os cards dos cursos são gerados pelo JavaScript (script.js) -->
-    <section class="cursos" id="listaCursos" aria-label="Cursos disponíveis"></section>
+    <section class="formulario">
+      <!-- method="post": se o JavaScript falhar, a senha nunca vai para a barra de endereço -->
+      <form id="formularioLogin" method="post" action="#">
+        <fieldset>
+          <legend>Acesso à conta</legend>
+
+          <label for="login-email">E-mail:</label>
+          <input
+            type="email"
+            id="login-email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+
+          <label for="login-senha">Senha:</label>
+          <input
+            type="password"
+            id="login-senha"
+            name="senha"
+            autocomplete="current-password"
+            required
+          >
+        </fieldset>
+
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <div id="alertaLogin" class="alerta" role="alert">
+      <strong id="mensagemLogin"></strong>
+    </div>
 
   </main>
 
